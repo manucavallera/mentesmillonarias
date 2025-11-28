@@ -1,0 +1,1595 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <link rel="icon" type="image/ico" href="/favicon.ico" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mentes Millonarias</title>
+    <meta
+      name="description"
+      content="Transforma tu catálogo de WhatsApp en una tienda profesional con carrito de compras, automatización JadeBro IA y optimizada para TikTok Live. By JadeSoft"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Google Fonts - Premium -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Custom CSS - MENTES MILLONARIAS PREMIUM -->
+    <style>
+      :root {
+        /* Mentes Millonarias - Gold Palette */
+        --gold-primary: #d4af37;
+        --gold-light: #f4e5b2;
+        --gold-dark: #aa8a2e;
+        --gold-metallic: #cfb53b;
+
+        /* Dark Luxury Background */
+        --dark-primary: #0a0a0a;
+        --dark-secondary: #1a1a1a;
+        --dark-tertiary: #2a2a2a;
+
+        /* Accent Colors */
+        --platinum: #e5e4e2;
+        --champagne: #f7e7ce;
+        --bronze: #cd7f32;
+        --rose-gold: #b76e79;
+
+        /* Typography */
+        --font-display: "Playfair Display", serif;
+        --font-body: "Poppins", sans-serif;
+        --font-accent: "Cormorant Garamond", serif;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: var(--font-body);
+        background: var(--dark-primary);
+        color: var(--platinum);
+        overflow-x: hidden;
+        position: relative;
+      }
+
+      /* ==================== PARTÍCULAS DORADAS FLOTANTES ==================== */
+      .particles-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 1;
+        overflow: hidden;
+      }
+
+      .particle {
+        position: absolute;
+        background: radial-gradient(circle, var(--gold-primary), transparent);
+        border-radius: 50%;
+        opacity: 0;
+        animation: float-particle 15s infinite ease-in-out;
+      }
+
+      @keyframes float-particle {
+        0% {
+          transform: translateY(100vh) translateX(0) scale(0);
+          opacity: 0;
+        }
+        10% {
+          opacity: 0.6;
+        }
+        90% {
+          opacity: 0.3;
+        }
+        100% {
+          transform: translateY(-100vh) translateX(100px) scale(1);
+          opacity: 0;
+        }
+      }
+
+      /* ==================== BACKGROUND PATTERN ==================== */
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+            45deg,
+            transparent 48%,
+            rgba(212, 175, 55, 0.03) 49%,
+            rgba(212, 175, 55, 0.03) 51%,
+            transparent 52%
+          ),
+          linear-gradient(
+            -45deg,
+            transparent 48%,
+            rgba(212, 175, 55, 0.03) 49%,
+            rgba(212, 175, 55, 0.03) 51%,
+            transparent 52%
+          );
+        background-size: 60px 60px;
+        z-index: 0;
+        pointer-events: none;
+      }
+
+      /* ==================== TYPOGRAPHY ==================== */
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: var(--font-display);
+        font-weight: 700;
+        color: var(--gold-primary);
+        text-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
+      }
+
+      .display-1,
+      .display-2,
+      .display-3,
+      .display-4,
+      .display-5 {
+        font-family: var(--font-display);
+        background: linear-gradient(
+          135deg,
+          var(--gold-light) 0%,
+          var(--gold-primary) 50%,
+          var(--gold-dark) 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        position: relative;
+      }
+
+      /* ==================== SHIMMER EFFECT ==================== */
+      .shimmer {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .shimmer::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.3),
+          transparent
+        );
+        animation: shimmer 3s infinite;
+      }
+
+      @keyframes shimmer {
+        0% {
+          left: -100%;
+        }
+        100% {
+          left: 100%;
+        }
+      }
+
+      /* ==================== NAVBAR PREMIUM ==================== */
+      .navbar {
+        background: rgba(10, 10, 10, 0.95);
+        backdrop-filter: blur(20px);
+        border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        padding: 1.5rem 0;
+        position: relative;
+        z-index: 1000;
+      }
+
+      .navbar-brand {
+        font-family: var(--font-display);
+        font-size: 2rem;
+        font-weight: 800;
+        background: linear-gradient(
+          135deg,
+          var(--gold-light),
+          var(--gold-primary)
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        letter-spacing: 2px;
+        text-shadow: 0 0 40px rgba(212, 175, 55, 0.4);
+      }
+
+      .nav-link {
+        color: var(--platinum) !important;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        transition: all 0.3s ease;
+        position: relative;
+      }
+
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background: var(--gold-primary);
+        transition: all 0.3s ease;
+        transform: translateX(-50%);
+      }
+
+      .nav-link:hover::after {
+        width: 80%;
+      }
+
+      /* ==================== BUTTONS PREMIUM ==================== */
+      .btn-gold-primary {
+        background: linear-gradient(
+          135deg,
+          var(--gold-primary) 0%,
+          var(--gold-metallic) 100%
+        );
+        border: 2px solid var(--gold-primary);
+        color: var(--dark-primary);
+        font-weight: 700;
+        font-family: var(--font-body);
+        padding: 16px 40px;
+        border-radius: 50px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 0.9rem;
+        transition: all 0.4s ease;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 10px 40px rgba(212, 175, 55, 0.4),
+          inset 0 1px 0 rgba(255, 255, 255, 0.3);
+      }
+
+      .btn-gold-primary::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.3);
+        transform: translate(-50%, -50%);
+        transition: width 0.6s, height 0.6s;
+      }
+
+      .btn-gold-primary:hover {
+        transform: translateY(-3px) scale(1.02);
+        box-shadow: 0 15px 50px rgba(212, 175, 55, 0.6),
+          inset 0 1px 0 rgba(255, 255, 255, 0.5);
+        color: var(--dark-primary);
+      }
+
+      .btn-gold-primary:hover::before {
+        width: 300px;
+        height: 300px;
+      }
+
+      .btn-gold-outline {
+        background: transparent;
+        border: 2px solid var(--gold-primary);
+        color: var(--gold-primary);
+        font-weight: 600;
+        padding: 16px 40px;
+        border-radius: 50px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 0.9rem;
+        transition: all 0.4s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .btn-gold-outline::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          135deg,
+          var(--gold-primary),
+          var(--gold-metallic)
+        );
+        transition: left 0.4s ease;
+        z-index: -1;
+      }
+
+      .btn-gold-outline:hover {
+        color: var(--dark-primary);
+        border-color: var(--gold-primary);
+        transform: translateY(-3px);
+        box-shadow: 0 15px 50px rgba(212, 175, 55, 0.5);
+      }
+
+      .btn-gold-outline:hover::before {
+        left: 0;
+      }
+
+      /* ==================== HERO SECTION ==================== */
+      .hero-section {
+        position: relative;
+        padding: 120px 0 80px;
+        background: radial-gradient(
+            ellipse at top,
+            rgba(212, 175, 55, 0.1),
+            transparent
+          ),
+          radial-gradient(
+            ellipse at bottom,
+            rgba(170, 138, 46, 0.1),
+            transparent
+          ),
+          var(--dark-primary);
+        overflow: hidden;
+      }
+
+      .hero-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 150%;
+        height: 150%;
+        background: radial-gradient(
+          circle,
+          rgba(212, 175, 55, 0.05),
+          transparent 70%
+        );
+        transform: translateX(-50%);
+        animation: pulse-glow 8s infinite ease-in-out;
+      }
+
+      @keyframes pulse-glow {
+        0%,
+        100% {
+          opacity: 0.3;
+          transform: translateX(-50%) scale(1);
+        }
+        50% {
+          opacity: 0.6;
+          transform: translateX(-50%) scale(1.1);
+        }
+      }
+
+      .hero-title {
+        font-size: 5rem;
+        line-height: 1.1;
+        margin-bottom: 2rem;
+        position: relative;
+        z-index: 2;
+      }
+
+      .hero-subtitle {
+        font-size: 1.5rem;
+        color: var(--champagne);
+        font-weight: 300;
+        margin-bottom: 3rem;
+        font-family: var(--font-accent);
+        font-style: italic;
+      }
+
+      /* ==================== STATS SECTION ==================== */
+      .stats-container {
+        display: flex;
+        gap: 3rem;
+        justify-content: center;
+        margin: 4rem 0;
+        flex-wrap: wrap;
+      }
+
+      .stat-item {
+        text-align: center;
+        position: relative;
+        padding: 2rem;
+      }
+
+      .stat-number {
+        font-size: 4rem;
+        font-weight: 800;
+        font-family: var(--font-display);
+        background: linear-gradient(
+          135deg,
+          var(--gold-light),
+          var(--gold-primary),
+          var(--gold-dark)
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        line-height: 1;
+        display: block;
+        position: relative;
+      }
+
+      .stat-number::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        width: 60px;
+        height: 3px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          var(--gold-primary),
+          transparent
+        );
+        transform: translateX(-50%);
+      }
+
+      .stat-label {
+        font-size: 1rem;
+        color: var(--platinum);
+        margin-top: 1.5rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: 500;
+      }
+
+      /* ==================== CARDS PREMIUM ==================== */
+      .premium-card {
+        background: linear-gradient(
+          145deg,
+          rgba(26, 26, 26, 0.9),
+          rgba(42, 42, 42, 0.8)
+        );
+        border: 1px solid rgba(212, 175, 55, 0.3);
+        border-radius: 24px;
+        padding: 3rem;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        backdrop-filter: blur(10px);
+      }
+
+      .premium-card::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(
+          circle,
+          rgba(212, 175, 55, 0.1),
+          transparent 50%
+        );
+        opacity: 0;
+        transition: opacity 0.5s ease;
+      }
+
+      .premium-card:hover {
+        transform: translateY(-10px);
+        border-color: var(--gold-primary);
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5),
+          0 0 80px rgba(212, 175, 55, 0.3),
+          inset 0 1px 0 rgba(212, 175, 55, 0.2);
+      }
+
+      .premium-card:hover::before {
+        opacity: 1;
+      }
+
+      /* ==================== ICON CIRCLES ==================== */
+      .icon-circle-gold {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background: linear-gradient(
+          135deg,
+          var(--gold-primary),
+          var(--gold-metallic)
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 2rem;
+        font-size: 3rem;
+        color: var(--dark-primary);
+        box-shadow: 0 20px 50px rgba(212, 175, 55, 0.4),
+          inset 0 2px 0 rgba(255, 255, 255, 0.3);
+        position: relative;
+        animation: rotate-icon 20s linear infinite;
+      }
+
+      .icon-circle-gold::after {
+        content: "";
+        position: absolute;
+        inset: -5px;
+        border-radius: 50%;
+        border: 2px solid var(--gold-primary);
+        opacity: 0.3;
+        animation: pulse-border 3s infinite;
+      }
+
+      @keyframes pulse-border {
+        0%,
+        100% {
+          transform: scale(1);
+          opacity: 0.3;
+        }
+        50% {
+          transform: scale(1.1);
+          opacity: 0.6;
+        }
+      }
+
+      @keyframes rotate-icon {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* ==================== PRICING CARDS ==================== */
+      .pricing-card {
+        background: linear-gradient(
+          145deg,
+          rgba(26, 26, 26, 0.95),
+          rgba(42, 42, 42, 0.9)
+        );
+        border: 2px solid rgba(212, 175, 55, 0.2);
+        border-radius: 30px;
+        padding: 3rem 2rem;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        height: 100%;
+      }
+
+      .pricing-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 5px;
+        background: linear-gradient(
+          90deg,
+          var(--gold-primary),
+          var(--gold-metallic),
+          var(--gold-primary)
+        );
+        background-size: 200% 100%;
+        animation: shimmer-border 3s linear infinite;
+      }
+
+      @keyframes shimmer-border {
+        0% {
+          background-position: -200% 0;
+        }
+        100% {
+          background-position: 200% 0;
+        }
+      }
+
+      .pricing-card:hover {
+        transform: translateY(-15px) scale(1.02);
+        border-color: var(--gold-primary);
+        box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6),
+          0 0 100px rgba(212, 175, 55, 0.4);
+      }
+
+      .pricing-card.featured {
+        border: 3px solid var(--gold-primary);
+        background: linear-gradient(
+          145deg,
+          rgba(42, 42, 42, 0.98),
+          rgba(26, 26, 26, 0.95)
+        );
+        box-shadow: 0 30px 70px rgba(0, 0, 0, 0.5),
+          0 0 80px rgba(212, 175, 55, 0.3);
+      }
+
+      .pricing-card.featured::before {
+        height: 8px;
+      }
+
+      .price-tag {
+        font-family: var(--font-display);
+        font-size: 4rem;
+        font-weight: 800;
+        background: linear-gradient(
+          135deg,
+          var(--gold-light),
+          var(--gold-primary)
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        line-height: 1;
+      }
+
+      .badge-premium {
+        background: linear-gradient(
+          135deg,
+          var(--gold-primary),
+          var(--gold-metallic)
+        );
+        color: var(--dark-primary);
+        font-weight: 700;
+        padding: 8px 20px;
+        border-radius: 50px;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        box-shadow: 0 5px 20px rgba(212, 175, 55, 0.4);
+      }
+
+      /* ==================== GLASS EFFECT ==================== */
+      .glass-effect {
+        background: rgba(26, 26, 26, 0.6);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(212, 175, 55, 0.2);
+        border-radius: 20px;
+      }
+
+      /* ==================== SECTION TITLES ==================== */
+      .section-title {
+        font-size: 3.5rem;
+        margin-bottom: 1.5rem;
+        position: relative;
+        display: inline-block;
+      }
+
+      .section-title::after {
+        content: "";
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        width: 100px;
+        height: 4px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          var(--gold-primary),
+          transparent
+        );
+        transform: translateX(-50%);
+      }
+
+      .section-subtitle {
+        font-size: 1.25rem;
+        color: var(--champagne);
+        font-family: var(--font-accent);
+        font-style: italic;
+        margin-bottom: 4rem;
+      }
+
+      /* ==================== FOOTER ==================== */
+      footer {
+        background: var(--dark-secondary);
+        border-top: 1px solid rgba(212, 175, 55, 0.2);
+        padding: 3rem 0;
+        position: relative;
+        z-index: 10;
+      }
+
+      .footer-brand {
+        font-family: var(--font-display);
+        font-size: 2rem;
+        background: linear-gradient(
+          135deg,
+          var(--gold-light),
+          var(--gold-primary)
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      /* ==================== RESPONSIVE ==================== */
+      @media (max-width: 768px) {
+        .hero-title {
+          font-size: 3rem;
+        }
+
+        .section-title {
+          font-size: 2.5rem;
+        }
+
+        .stat-number {
+          font-size: 3rem;
+        }
+
+        .icon-circle-gold {
+          width: 80px;
+          height: 80px;
+          font-size: 2.5rem;
+        }
+
+        .pricing-card {
+          margin-bottom: 2rem;
+        }
+      }
+
+      /* ==================== ANIMATIONS ==================== */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .fade-in-up {
+        animation: fadeInUp 0.8s ease-out forwards;
+      }
+
+      /* ==================== SCROLLBAR CUSTOM ==================== */
+      ::-webkit-scrollbar {
+        width: 12px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: var(--dark-primary);
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: linear-gradient(
+          180deg,
+          var(--gold-primary),
+          var(--gold-dark)
+        );
+        border-radius: 10px;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(
+          180deg,
+          var(--gold-light),
+          var(--gold-primary)
+        );
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Partículas Doradas Flotantes -->
+    <div class="particles-container" id="particles"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand shimmer" href="/">
+          <i class="fas fa-gem me-2"></i>Mentes Millonarias
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto align-items-center">
+            <li class="nav-item">
+              <a class="nav-link" href="#funciones">Funciones</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#jadebro">Mentes IA</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#planes">Planes</a>
+            </li>
+            <li class="nav-item ms-3">
+              <a href="/tienda/" class="btn btn-gold-primary btn-sm">
+                Crear Tienda
+              </a>
+              <a href="/admin/" class="btn btn-outline-primary fw-medium"
+                >Iniciar Sesión</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="container position-relative" style="z-index: 10">
+        <div class="row align-items-center">
+          <div class="col-lg-12 text-center">
+            <div class="mb-4">
+              <span class="badge-premium shimmer">
+                <i class="fas fa-crown me-2"></i>PLATAFORMA EXCLUSIVA
+              </span>
+            </div>
+
+            <h1 class="hero-title fade-in-up">
+              La Evolución de tu<br />
+              <span class="shimmer">Catálogo de WhatsApp</span>
+            </h1>
+
+            <p class="hero-subtitle fade-in-up">
+              Transforma tu negocio en una máquina de ventas automatizada<br />
+              con inteligencia artificial y tecnología premium
+            </p>
+
+            <div
+              class="d-flex flex-column flex-sm-row gap-4 justify-content-center mb-5 fade-in-up"
+            >
+              <a href="/tienda/" class="btn btn-gold-primary btn-lg">
+                <i class="fas fa-rocket me-2"></i>Comenzar Ahora
+              </a>
+
+              <a href="#jadebro" class="btn btn-gold-outline btn-lg">
+                <i class="fas fa-robot me-2"></i>Ver Mentes IA
+              </a>
+            </div>
+
+            <!-- Stats -->
+            <div class="stats-container fade-in-up">
+              <div class="stat-item">
+                <span class="stat-number shimmer">1000+</span>
+                <span class="stat-label">Tiendas Activas</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number shimmer">$2M+</span>
+                <span class="stat-label">En Ventas</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number shimmer">24/7</span>
+                <span class="stat-label">Automatización</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cómo funciona -->
+    <section
+      class="py-5"
+      style="background: var(--dark-secondary); position: relative; z-index: 10"
+    >
+      <div class="container py-5">
+        <div class="text-center mb-5">
+          <h2 class="section-title shimmer">Cómo Funciona</h2>
+          <p class="section-subtitle">
+            Tres pasos para revolucionar tu negocio
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="premium-card text-center">
+              <div class="icon-circle-gold shimmer">
+                <i class="fas fa-link"></i>
+              </div>
+              <h4 class="mb-3" style="color: var(--gold-primary)">
+                1. Conecta WhatsApp
+              </h4>
+              <p class="text-platinum">
+                Vincula tu cuenta de WhatsApp Business en segundos. Sin
+                complicaciones técnicas.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="premium-card text-center">
+              <div class="icon-circle-gold shimmer">
+                <i class="fas fa-upload"></i>
+              </div>
+              <h4 class="mb-3" style="color: var(--gold-primary)">
+                2. Sube Productos
+              </h4>
+              <p class="text-platinum">
+                Importa tu catálogo completo automáticamente o crea productos
+                uno por uno.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="premium-card text-center">
+              <div class="icon-circle-gold shimmer">
+                <i class="fas fa-rocket"></i>
+              </div>
+              <h4 class="mb-3" style="color: var(--gold-primary)">
+                3. Vende Online
+              </h4>
+              <p class="text-platinum">
+                Comparte tu link y comienza a vender 24/7 con carrito de compras
+                profesional.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Funciones Principales -->
+    <section
+      id="funciones"
+      class="py-5"
+      style="background: var(--dark-primary); position: relative; z-index: 10"
+    >
+      <div class="container py-5">
+        <div class="text-center mb-5">
+          <h2 class="section-title shimmer">Funciones Premium</h2>
+          <p class="section-subtitle">Todo lo que necesitas para triunfar</p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="premium-card h-100">
+              <div class="icon-circle-gold mb-4">
+                <i class="fas fa-shopping-cart"></i>
+              </div>
+              <h4 style="color: var(--gold-primary)">Carrito Profesional</h4>
+              <p class="text-platinum">
+                Sistema de carrito completo con checkout optimizado y múltiples
+                métodos de pago.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="premium-card h-100">
+              <div class="icon-circle-gold mb-4">
+                <i class="fas fa-whatsapp"></i>
+              </div>
+              <h4 style="color: var(--gold-primary)">WhatsApp Automático</h4>
+              <p class="text-platinum">
+                Recibe y gestiona pedidos automáticamente por WhatsApp con
+                confirmación instantánea.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="premium-card h-100">
+              <div class="icon-circle-gold mb-4">
+                <i class="fas fa-palette"></i>
+              </div>
+              <h4 style="color: var(--gold-primary)">Diseño Personalizable</h4>
+              <p class="text-platinum">
+                Personaliza colores, logos y diseño para que tu tienda refleje
+                tu marca.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="premium-card h-100">
+              <div class="icon-circle-gold mb-4">
+                <i class="fas fa-chart-line"></i>
+              </div>
+              <h4 style="color: var(--gold-primary)">Analytics Avanzados</h4>
+              <p class="text-platinum">
+                Métricas en tiempo real de visitas, conversiones y ventas para
+                optimizar tu negocio.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="premium-card h-100">
+              <div class="icon-circle-gold mb-4">
+                <i class="fas fa-mobile-alt"></i>
+              </div>
+              <h4 style="color: var(--gold-primary)">100% Responsive</h4>
+              <p class="text-platinum">
+                Tu tienda se ve perfecta en móviles, tablets y computadoras.
+                Optimizada para todos.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="premium-card h-100">
+              <div class="icon-circle-gold mb-4">
+                <i class="fas fa-bolt"></i>
+              </div>
+              <h4 style="color: var(--gold-primary)">Carga Ultra Rápida</h4>
+              <p class="text-platinum">
+                Tecnología de última generación para tiempos de carga
+                instantáneos.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- JadeBro IA Section -->
+    <section
+      id="jadebro"
+      class="py-5"
+      style="
+        background: linear-gradient(
+          135deg,
+          var(--dark-secondary) 0%,
+          var(--dark-primary) 100%
+        );
+        position: relative;
+        z-index: 10;
+      "
+    >
+      <div class="container py-5">
+        <div class="row align-items-center">
+          <div class="col-lg-6 mb-4 mb-lg-0">
+            <div class="mb-4">
+              <span class="badge-premium shimmer">
+                <i class="fas fa-robot me-2"></i>INTELIGENCIA ARTIFICIAL
+              </span>
+            </div>
+            <h2 class="display-4 mb-4 shimmer">
+              <i class="fas fa-robot me-3"></i>Mentes IA
+            </h2>
+            <p class="fs-5 mb-4 text-platinum">
+              Tu asistente de ventas con inteligencia artificial que trabaja
+              24/7 para cerrar ventas, responder consultas y gestionar tu
+              negocio automáticamente.
+            </p>
+
+            <div class="mb-4">
+              <div class="d-flex align-items-center mb-3">
+                <i
+                  class="fas fa-check-circle me-3 fs-4"
+                  style="color: var(--gold-primary)"
+                ></i>
+                <span class="text-platinum"
+                  >Respuestas automáticas inteligentes</span
+                >
+              </div>
+              <div class="d-flex align-items-center mb-3">
+                <i
+                  class="fas fa-check-circle me-3 fs-4"
+                  style="color: var(--gold-primary)"
+                ></i>
+                <span class="text-platinum"
+                  >Seguimiento proactivo de clientes</span
+                >
+              </div>
+              <div class="d-flex align-items-center mb-3">
+                <i
+                  class="fas fa-check-circle me-3 fs-4"
+                  style="color: var(--gold-primary)"
+                ></i>
+                <span class="text-platinum"
+                  >Recomendaciones personalizadas</span
+                >
+              </div>
+              <div class="d-flex align-items-center mb-3">
+                <i
+                  class="fas fa-check-circle me-3 fs-4"
+                  style="color: var(--gold-primary)"
+                ></i>
+                <span class="text-platinum"
+                  >Recuperación de carritos abandonados</span
+                >
+              </div>
+            </div>
+
+            <a href="#planes" class="btn btn-gold-primary btn-lg">
+              <i class="fas fa-crown me-2"></i>Activar Mentes IA
+            </a>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="premium-card text-center p-5">
+              <div
+                class="icon-circle-gold mx-auto mb-4"
+                style="width: 150px; height: 150px; font-size: 5rem"
+              >
+                <i class="fas fa-brain"></i>
+              </div>
+              <h3 class="mb-4" style="color: var(--gold-primary)">
+                Resultados Comprobados
+              </h3>
+              <div class="row g-4">
+                <div class="col-6">
+                  <div class="stat-number" style="font-size: 3rem">+400%</div>
+                  <div class="stat-label">Conversiones</div>
+                </div>
+                <div class="col-6">
+                  <div class="stat-number" style="font-size: 3rem">24/7</div>
+                  <div class="stat-label">Disponibilidad</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Planes de Precios -->
+    <section
+      id="planes"
+      class="py-5"
+      style="background: var(--dark-primary); position: relative; z-index: 10"
+    >
+      <div class="container py-5">
+        <div class="text-center mb-5">
+          <h2 class="section-title shimmer">Planes Premium</h2>
+          <p class="section-subtitle">Elige el plan perfecto para tu negocio</p>
+        </div>
+
+        <div class="row g-4">
+          <!-- Plan Gratis -->
+          <div class="col-lg-3 col-md-6">
+            <div class="pricing-card text-center">
+              <div class="mb-4">
+                <span class="badge-premium">GRATIS</span>
+              </div>
+              <h3 class="mb-4" style="color: var(--gold-primary)">
+                <i class="fas fa-gift me-2"></i>Plan Gratis
+              </h3>
+              <div class="price-tag mb-2">$0</div>
+              <p class="text-platinum mb-4">Para comenzar</p>
+
+              <ul class="list-unstyled text-start mb-4">
+                <li class="mb-3">
+                  <i
+                    class="fas fa-check me-2"
+                    style="color: var(--gold-primary)"
+                  ></i>
+                  Tienda online básica
+                </li>
+                <li class="mb-3">
+                  <i
+                    class="fas fa-check me-2"
+                    style="color: var(--gold-primary)"
+                  ></i>
+                  10 productos máximo
+                </li>
+                <li class="mb-3">
+                  <i
+                    class="fas fa-check me-2"
+                    style="color: var(--gold-primary)"
+                  ></i>
+                  WhatsApp manual
+                </li>
+                <li class="mb-3">
+                  <i
+                    class="fas fa-check me-2"
+                    style="color: var(--gold-primary)"
+                  ></i>
+                  Dominio Mentes/tienda
+                </li>
+              </ul>
+
+              <a href="/tienda/" class="btn btn-gold-outline w-100">
+                Comenzar Gratis
+              </a>
+            </div>
+          </div>
+
+          <!-- Plan Pro -->
+          <div class="col-lg-3 col-md-6">
+            <div class="pricing-card text-center">
+              <div class="mb-4">
+                <span class="badge-premium">PROFESIONAL</span>
+              </div>
+              <h3 class="mb-4" style="color: var(--gold-primary)">
+                <i class="fas fa-star me-2"></i>Plan Pro
+              </h3>
+              <div class="price-tag mb-2">$30.000</div>
+              <p class="text-platinum mb-1">ARS</p>
+              <small class="text-muted">USD $19/mes</small>
+
+              <ul class="list-unstyled text-start mb-4 mt-4">
+                <li class="mb-3">
+                  <i
+                    class="fas fa-check me-2"
+                    style="color: var(--gold-primary)"
+                  ></i>
+                  Productos ilimitados
+                </li>
+                <li class="mb-3">
+                  <i
+                    class="fas fa-check me-2"
+                    style="color: var(--gold-primary)"
+                  ></i>
+                  WhatsApp automatizado
+                </li>
+                <li class="mb-3">
+                  <i
+                    class="fas fa-check me-2"
+                    style="color: var(--gold-primary)"
+                  ></i>
+                  Dominio personalizado
+                </li>
+                <li class="mb-3">
+                  <i
+                    class="fas fa-check me-2"
+                    style="color: var(--gold-primary)"
+                  ></i>
+                  Analytics avanzados
+                </li>
+                <li class="mb-3">
+                  <i
+                    class="fas fa-check me-2"
+                    style="color: var(--gold-primary)"
+                  ></i>
+                  TikTok Live integrado
+                </li>
+              </ul>
+
+              <a href="/tienda/" class="btn btn-gold-primary w-100">
+                Activar Plan Pro
+              </a>
+            </div>
+          </div>
+
+          <!-- Plan JadeBro IA -->
+          <div class="col-lg-3 col-md-6">
+            <div class="pricing-card featured text-center">
+              <div class="mb-4">
+                <span class="badge-premium shimmer">
+                  <i class="fas fa-crown me-2"></i>MÁS POPULAR
+                </span>
+              </div>
+              <h3 class="mb-4" style="color: var(--gold-primary)">
+                <i class="fas fa-robot me-2"></i>Mentes IA
+              </h3>
+              <div class="price-tag mb-2">$60.000</div>
+              <p class="text-platinum mb-1">ARS</p>
+              <small class="text-muted">USD $38/mes</small>
+
+              <ul class="list-unstyled text-start mb-4 mt-4">
+                <li class="mb-3">
+                  <i
+                    class="fas fa-check me-2"
+                    style="color: var(--gold-primary)"
+                  ></i>
+                  Todo del plan Pro + IA
+                </li>
+                <li class="mb-3">
+                  <i
+                    class="fas fa-robot me-2"
+                    style="color: var(--gold-primary)"
+                  ></i>
+                  <strong>Mentes IA</strong>
+                </li>
+                <li class="mb-3">
+                  <i
+                    class="fas fa-comments me-2"
+                    style="color: var(--gold-primary)"
+                  ></i>
+                  WhatsApp 24/7
+                </li>
+                <li class="mb-3">
+                  <i
+                    class="fas fa-brain me-2"
+                    style="color: var(--gold-primary)"
+                  ></i>
+                  Panel inteligente completo
+                </li>
+                <li class="mb-3">
+                  <i
+                    class="fas fa-chart-line me-2"
+                    style="color: var(--gold-primary)"
+                  ></i>
+                  Analytics predictivos
+                </li>
+              </ul>
+
+              <a href="/tienda/" class="btn btn-gold-primary w-100">
+                Activar Mentes IA
+              </a>
+            </div>
+          </div>
+
+          <!-- Plan JadeBro MAX -->
+          <div class="col-lg-3 col-md-6">
+            <div class="pricing-card text-center">
+              <div class="mb-4">
+                <span class="badge-premium">EMPRESARIAL</span>
+              </div>
+              <h3 class="mb-4" style="color: var(--gold-primary)">
+                <i class="fas fa-rocket me-2"></i>Mentes IA Max
+              </h3>
+              <div class="price-tag mb-2">$140.000</div>
+              <p class="text-platinum mb-1">ARS</p>
+              <small class="text-muted">USD $90/mes</small>
+
+              <ul class="list-unstyled text-start mb-4 mt-4">
+                <li class="mb-3">
+                  <i
+                    class="fas fa-check me-2"
+                    style="color: var(--gold-primary)"
+                  ></i>
+                  Todo PRO + IA + OmniCanal
+                </li>
+                <li class="mb-3">
+                  <i
+                    class="fas fa-robot me-2"
+                    style="color: var(--gold-primary)"
+                  ></i>
+                  <strong>Mentes IA 24/7</strong>
+                </li>
+                <li class="mb-3">
+                  <i
+                    class="fas fa-comments me-2"
+                    style="color: var(--gold-primary)"
+                  ></i>
+                  WhatsApp + Instagram + FB
+                </li>
+                <li class="mb-3">
+                  <i
+                    class="fas fa-users me-2"
+                    style="color: var(--gold-primary)"
+                  ></i>
+                  Plan TEAM multiusuario
+                </li>
+                <li class="mb-3">
+                  <i
+                    class="fas fa-cogs me-2"
+                    style="color: var(--gold-primary)"
+                  ></i>
+                  CRM Integrado
+                </li>
+              </ul>
+
+              <a href="/tienda/" class="btn btn-gold-primary w-100">
+                Activar Mentes IA MAX
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-5">
+          <p class="text-platinum mb-4 fs-5">
+            <i class="fas fa-shield-alt me-2"></i>
+            Todos los planes incluyen soporte en español y capacitación gratuita
+          </p>
+          <div
+            class="d-flex flex-column flex-md-row gap-3 justify-content-center"
+          >
+            <a
+              href="https://wa.me/5491135850512?text=Hola! Quiero consultar sobre los planes de JadeShop"
+              class="btn btn-gold-outline btn-lg"
+            >
+              <i class="fab fa-whatsapp me-2"></i>Consultar por WhatsApp
+            </a>
+            <a
+              href="https://www.tiktok.com/@jadesoft.ar"
+              class="btn btn-gold-outline btn-lg"
+            >
+              <i class="fas fa-play me-2"></i>Ver Demo en Vivo
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section
+      class="py-5"
+      style="
+        background: linear-gradient(
+          135deg,
+          var(--dark-secondary) 0%,
+          var(--dark-primary) 100%
+        );
+        position: relative;
+        z-index: 10;
+      "
+    >
+      <div class="container py-5 text-center">
+        <h2 class="display-4 mb-4 shimmer">¿Listo para Evolucionar?</h2>
+        <p class="fs-4 text-champagne mb-5">
+          Únete a los emprendedores que ya transformaron sus negocios con Mentes
+          Millonarias
+        </p>
+
+        <div
+          class="d-flex flex-column flex-sm-row gap-4 justify-content-center"
+        >
+          <a href="/tienda/" class="btn btn-gold-primary btn-lg px-5 py-3">
+            <i class="fas fa-rocket me-2"></i>Crear Mi Tienda Gratis
+          </a>
+          <a
+            href="https://wa.me/5491135850512?text=Hola! Quiero consultar sobre JadeShop"
+            class="btn btn-gold-outline btn-lg px-5 py-3"
+          >
+            <i class="fab fa-whatsapp me-2"></i>Consultar por WhatsApp
+          </a>
+        </div>
+
+        <div class="mt-5">
+          <small class="text-platinum">
+            <i class="fas fa-check me-2"></i>Sin costos ocultos
+            <span class="mx-3">•</span>
+            <i class="fas fa-check me-2"></i>Cancela cuando quieras
+            <span class="mx-3">•</span>
+            <i class="fas fa-check me-2"></i>Soporte gratuito
+          </small>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row py-4 align-items-center">
+          <div class="col-md-6 col-12 mb-3 mb-md-0 text-center text-md-start">
+            <div class="footer-brand mb-2">
+              <i class="fas fa-gem me-2"></i>Mentes Millonarias
+            </div>
+            <p class="text-muted mb-0">
+              La plataforma que evoluciona emprendedores en comercios
+              profesionales
+            </p>
+            <div class="mt-2">
+              <small class="text-muted">by </small>
+              <span class="badge-premium small">Mentes Millonarias</span>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-12">
+            <div
+              class="d-flex justify-content-center justify-content-md-end gap-4"
+            >
+              <a
+                href="https://wa.me/5491135850512"
+                class="text-decoration-none"
+                style="color: var(--gold-primary)"
+              >
+                <i class="fab fa-whatsapp fs-3"></i>
+              </a>
+              <a
+                href="https://www.instagram.com/jadebro.ai/"
+                class="text-decoration-none"
+                style="color: var(--gold-primary)"
+              >
+                <i class="fab fa-instagram fs-3"></i>
+              </a>
+              <a
+                href="https://www.tiktok.com/@jadesoft.ar"
+                class="text-decoration-none"
+                style="color: var(--gold-primary)"
+              >
+                <i class="fab fa-tiktok fs-3"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="row border-top pt-4"
+          style="border-color: rgba(212, 175, 55, 0.2) !important"
+        >
+          <div class="col-12 text-center">
+            <p class="text-muted mb-0">
+              &copy; 2025 JadeShop. Hecho con
+              <i class="fas fa-heart" style="color: var(--rose-gold)"></i> para
+              emprendedores.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JS -->
+    <script>
+      // ========== PARTÍCULAS DORADAS FLOTANTES ==========
+      function createParticles() {
+        const container = document.getElementById("particles");
+        const particleCount = 30;
+
+        for (let i = 0; i < particleCount; i++) {
+          const particle = document.createElement("div");
+          particle.className = "particle";
+
+          const size = Math.random() * 6 + 2;
+          particle.style.width = size + "px";
+          particle.style.height = size + "px";
+
+          particle.style.left = Math.random() * 100 + "%";
+          particle.style.animationDelay = Math.random() * 15 + "s";
+          particle.style.animationDuration = Math.random() * 10 + 10 + "s";
+
+          container.appendChild(particle);
+        }
+      }
+
+      // ========== SMOOTH SCROLLING ==========
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+        });
+      });
+
+      // ========== SCROLL ANIMATIONS ==========
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -100px 0px",
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+          }
+        });
+      }, observerOptions);
+
+      // ========== INITIALIZE ==========
+      document.addEventListener("DOMContentLoaded", function () {
+        // Create particles
+        createParticles();
+
+        // Animate cards on scroll
+        document
+          .querySelectorAll(".premium-card, .pricing-card")
+          .forEach((el) => {
+            el.style.opacity = "0";
+            el.style.transform = "translateY(50px)";
+            el.style.transition = "all 0.8s cubic-bezier(0.4, 0, 0.2, 1)";
+            observer.observe(el);
+          });
+
+        // Fade in hero elements
+        document.querySelectorAll(".fade-in-up").forEach((el, index) => {
+          el.style.animationDelay = index * 0.2 + "s";
+        });
+      });
+
+      // ========== NAVBAR SCROLL EFFECT ==========
+      let lastScroll = 0;
+      window.addEventListener("scroll", () => {
+        const navbar = document.querySelector(".navbar");
+        const currentScroll = window.pageYOffset;
+
+        if (currentScroll > 100) {
+          navbar.style.boxShadow = "0 10px 40px rgba(0, 0, 0, 0.8)";
+        } else {
+          navbar.style.boxShadow = "none";
+        }
+
+        lastScroll = currentScroll;
+      });
+    </script>
+  </body>
+</html>
